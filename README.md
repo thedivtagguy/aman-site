@@ -13,6 +13,7 @@ The site you'll start with is intentionally minimal—black text on white backgr
 │   ├── pages/                  ← Each file here becomes a page on your site
 │   ├── components/             ← Reusable pieces of code
 │   └── styles/global.css       ← CSS that applies everywhere
+├── learn/                      ← Step-by-step learning chapters
 ├── public/                     ← Images and other files
 └── package.json               ← Project configuration
 ```
@@ -57,6 +58,14 @@ I've set up CSS variables in `src/styles/global.css` that control colors, spacin
 ```
 
 And that change applies everywhere. This is how real websites work—you define your design system once, then use it consistently.
+
+## Learning path
+
+**New to web development?** Follow the step-by-step learning path in the `learn/` folder:
+
+**[Start here: Learning Path →](learn/00-start-here.md)**
+
+This takes you through 8 chapters from basic changes to building a complete portfolio website. Each chapter builds on the previous one and includes clear success criteria.
 
 ## What to try first
 
