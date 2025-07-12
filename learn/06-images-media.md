@@ -183,4 +183,4 @@ You learned how images work on the web and created a flexible component that can
 
 ---
 
-**Previous:** [Chapter 5: New Page](./05-new-page.md) | **Next:** [Chapter 7: Interactivity](./07-project-pages.md)
+**Previous:** [Chapter 5: New Page](./05-new-page.md) | **Next:** [Chapter 7: Add Project Pages](./07-project-pages.md)
