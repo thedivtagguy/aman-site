@@ -1,0 +1,29 @@
+---
+// This is our first component! 
+// Components are reusable pieces of code that we can use anywhere on our site
+// This component creates a simple button
+
+// We can pass in text for the button
+const { text = "Click me" } = Astro.props;
+---
+
+<!-- This is what the button looks like -->
+<button class="simple-button">
+  {text}
+</button>
+
+<style>
+  /* Styles just for this button component using CSS variables */
+  .simple-button {
+    background: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+    padding: var(--space-small) var(--space-large);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+  }
+  
+  .simple-button:hover {
+    background: var(--color-accent-hover);
+  }
+</style>
