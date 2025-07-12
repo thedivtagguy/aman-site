@@ -1,8 +1,16 @@
-# Your First Website
+# Your First Astro Website
 
 This is a simple website built with Astro, which is a modern tool that makes websites fast and easy to work with. You'll be writing HTML and CSS (the fundamental languages of the web), but Astro helps organize everything in a way that makes sense.
 
-The site you'll start with is intentionally minimal—black text on white backgrounds, simple layouts, no fancy animations. This isn't because simple is bad, but because simple lets you focus on learning the important stuff first. You can always add complexity later.
+The site you'll start with is intentionally minimal—black text on white backgrounds, simple layouts, no fancy animations. Simple lets you focus on learning the important stuff first. You can always add complexity later.
+
+## Learn
+
+**New to all this?** Follow the step-by-step learning path in the `learn/` folder:
+
+**[Start here →](learn/00-start-here.md)**
+
+This takes you through 8 chapters from basic changes to new pages and components for your website. 
 
 ## How your files are organized
 
@@ -45,6 +53,14 @@ const message = "Hello world";
 
 <!-- This is the template - HTML that gets shown to visitors -->
 <h1>{message}</h1>
+
+
+<!-- All CSS styling can be added in the component as well -->
+<style>
+h1 {
+   font-weight: bold;
+}
+</style>
 ```
 
 The stuff between the `---` lines is JavaScript. The stuff below is HTML (with a few extra features, like being able to use `{message}` to insert variables).
@@ -59,13 +75,6 @@ I've set up CSS variables in `src/styles/global.css` that control colors, spacin
 
 And that change applies everywhere. This is how real websites work—you define your design system once, then use it consistently.
 
-## Learning path
-
-**New to web development?** Follow the step-by-step learning path in the `learn/` folder:
-
-**[Start here: Learning Path →](learn/00-start-here.md)**
-
-This takes you through 8 chapters from basic changes to building a complete portfolio website. Each chapter builds on the previous one and includes clear success criteria.
 
 ## What to try first
 
@@ -148,20 +157,4 @@ AI can be really helpful, but use it smartly:
 - If you don't understand what it's suggesting
 
 **Remember**: Always try to understand the solution, don't just copy-paste. Ask follow-up questions like "why does this work?"
-</details>
-
-<details>
-<summary><strong>Where to find good information</strong></summary>
-
-**For specific problems:**
-- [MDN Web Docs](https://developer.mozilla.org) - The definitive reference for HTML/CSS
-- [Astro docs](https://docs.astro.build) - Well-written and beginner-friendly
-- Stack Overflow - Search your error message
-
-**For learning:**
-- [CSS Tricks](https://css-tricks.com) - Practical tutorials
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - For layout
-- [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - For complex layouts
-
-**Pro tip**: When googling, include "MDN" in your search for CSS properties, or "Astro" for framework-specific questions.
 </details>

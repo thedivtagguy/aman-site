@@ -88,10 +88,6 @@ You learned that websites use consistent spacing systems instead of random numbe
 
 ## Troubleshooting
 
-**The horizontal layout looks squished on mobile**
-- This is normal! We'll learn about responsive design later
-- For now, you can add `flex-direction: column;` inside a media query if you want
-
 **The spacing feels too tight or too loose**
 - Adjust the gap value: `gap: var(--space-medium);` for tighter, `gap: var(--space-xlarge);` for looser
 - Remember you can use custom values too: `gap: 1.5rem;`
@@ -104,4 +100,4 @@ You learned that websites use consistent spacing systems instead of random numbe
 
 ---
 
-**Previous:** [Chapter 1: First Changes](./01-first-changes.md) | **Next:** [Chapter 3: Personal Touch](./03-personal-touch.md)
+**Previous:** [Chapter 1: First Changes](./01-first-changes.md) | **Next:** [Chapter 3: Typography & Fonts](./03-typography-fonts.md)
