@@ -1,0 +1,73 @@
+---
+// Blog layout - different from the main layout
+// This shows how you can have multiple layouts for different types of pages
+const { title, date } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Blog post" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body>
+		<!-- Simple back link instead of full navigation -->
+		<nav>
+			<a href="/">← Back to home</a>
+			<a href="/blog">All posts</a>
+		</nav>
+
+		<!-- Blog post content -->
+		<article>
+			<header>
+				<h1>{title}</h1>
+				{date && <p class="date">Published {date}</p>}
+			</header>
+			
+			<div class="content">
+				<slot />
+			</div>
+		</article>
+
+		<footer>
+			<p><a href="/blog">← Back to all posts</a></p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	/* Different styling just for blog posts */
+	article {
+		margin: 40px 0;
+	}
+	
+	header {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+	}
+	
+	.date {
+		color: #666;
+		font-size: 16px;
+		margin-top: 10px;
+	}
+	
+	.content {
+		line-height: 1.7;
+	}
+	
+	/* Make blog content a bit more readable */
+	.content h2 {
+		margin-top: 40px;
+		margin-bottom: 15px;
+	}
+	
+	.content p {
+		margin-bottom: 20px;
+	}
+</style>

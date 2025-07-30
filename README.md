@@ -1,160 +1,139 @@
-# Your First Astro Website
+# Your first Astro website
 
-This is a simple website built with Astro, which is a modern tool that makes websites fast and easy to work with. You'll be writing HTML and CSS (the fundamental languages of the web), but Astro helps organize everything in a way that makes sense.
+A minimal website starter built with Astro, designed for people comfortable with basic HTML and CSS who want to learn modern web development without the complexity.
 
-The site you'll start with is intentionally minimal—black text on white backgrounds, simple layouts, no fancy animations. Simple lets you focus on learning the important stuff first. You can always add complexity later.
+This starter is intentionally simple.
 
-## Learn
-
-**New to all this?** Follow the step-by-step learning path in the `learn/` folder:
-
-**[Start here →](learn/00-start-here.md)**
-
-This takes you through 8 chapters from basic changes to new pages and components for your website. 
-
-## How your files are organized
+## File Structure
 
 ```
 /
 ├── src/
-│   ├── layouts/Layout.astro    ← The template used by every page
-│   ├── pages/                  ← Each file here becomes a page on your site
-│   ├── components/             ← Reusable pieces of code
-│   └── styles/global.css       ← CSS that applies everywhere
-├── learn/                      ← Step-by-step learning chapters
-├── public/                     ← Images and other files
-└── package.json               ← Project configuration
+│   ├── layouts/MainLayout.astro    ← Template used by every page
+│   ├── pages/                  ← Each file becomes a page (index.astro → /)
+│   │   └── blog/              ← Blog posts (.md files)
+│   ├── components/            ← Reusable components (Button, Card)
+│   └── styles/global.css      ← All your CSS in one place
+├── public/                    ← Images and static files
+└── package.json              ← Project setup
 ```
 
-The `src/pages/` folder is where the magic happens. Every `.astro` file you put in there automatically becomes a page on your website. So `about.astro` becomes `yoursite.com/about`. Pretty straightforward.
+## Getting Started
 
-## Getting started
-
-You'll need to have Node.js installed on your computer first. If you don't have it, go download it from [nodejs.org](https://nodejs.org/).
-
-Then, in your terminal:
+1. **Install Node.js** from [nodejs.org](https://nodejs.org/) if you don't have it
+2. **Clone this project** and open it in your code editor
+3. **Install dependencies** and start the dev server:
 
 ```bash
-pnpm install
-pnpm run dev
+npm install
+npm run dev
 ```
 
-This installs everything you need and starts a development server. Open `http://localhost:4321` in your browser and you should see your site. Now here's the fun part: leave that browser tab open, and start editing files. Your changes will show up automatically.
+4. **Open your browser** to `http://localhost:4321`
+5. **Start editing!** Changes appear automatically in your browser
 
-## Understanding Astro files
+## Understanding the Code
 
-Astro files might look a bit weird at first, but they're actually pretty simple. Each one has two parts:
+### Astro Files (.astro)
+
+Each Astro file has two parts:
 
 ```astro
 ---
-// This is "frontmatter" - JavaScript that runs when the page loads
-const message = "Hello world";
+// JavaScript section - runs on the server
+const title = "My Page";
 ---
 
-<!-- This is the template - HTML that gets shown to visitors -->
-<h1>{message}</h1>
-
-
-<!-- All CSS styling can be added in the component as well -->
-<style>
-h1 {
-   font-weight: bold;
-}
-</style>
+<!-- HTML section - what visitors see -->
+<h1>{title}</h1>
 ```
 
-The stuff between the `---` lines is JavaScript. The stuff below is HTML (with a few extra features, like being able to use `{message}` to insert variables).
+### Components
 
-## CSS Variables
+Look at `src/components/Button.astro` to see how props work:
 
-I've set up CSS variables in `src/styles/global.css` that control colors, spacing, and typography across the entire site. This means if you want to change the main color from black to, say, blue, you just change one line:
-
-```css
---color-accent: blue;
+```astro
+---
+const { text = "Click me" } = Astro.props;
+---
+<button class="btn">{text}</button>
 ```
 
-And that change applies everywhere. This is how real websites work—you define your design system once, then use it consistently.
+Use it like: `<Button text="Custom Text" />`
 
+### Layouts
 
-## What to try first
+This starter has two layouts to show how they work:
 
-1. **Change some text**: Open `src/pages/index.astro` and edit the heading
-2. **Try a different color**: In `src/styles/global.css`, change `--color-accent` to `red` or `#0066cc`
-3. **Add a new page**: Create a new file in `src/pages/` and see what happens
-4. **Look at the Button component**: Check out `src/components/Button.astro` to see how reusable components work
+- **MainLayout.astro** - Used by regular pages (home, about, blog index)
+- **BlogLayout.astro** - Used by blog posts (different navigation, styling)
 
-## Commands you'll use
+### Markdown Blog Posts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build your site for publishing
-- `npm run preview` - Preview your built site
+Files in `src/pages/blog/` become blog posts. They use the BlogLayout:
 
-## When you get stuck
+```markdown
+---
+layout: ../../layouts/BlogLayout.astro
+title: "My Post"
+date: "2024-01-15"
+---
 
-You will get stuck. Everyone does. Here's how to get unstuck:
+# My Post Content
 
-<details>
-<summary><strong>My changes aren't showing up</strong></summary>
+Regular markdown content goes here.
+```
 
-First, check that your dev server is still running (you should see logs in your terminal). If it stopped, run `npm run dev` again.
+## Quick Start Tasks
 
-If it's running but changes aren't appearing:
-- Save your file (Ctrl+S / Cmd+S)
-- Check the terminal for any error messages
-- Try refreshing your browser
-- Make sure you're editing the right file
-</details>
+1. **Edit the homepage**: Change text in `src/pages/index.astro`
+2. **Customize colors**: Edit `src/styles/global.css`
+3. **Add a new page**: Create `src/pages/contact.astro`
+4. **Try the components**: Use `<Button>` and `<Card>` in your pages
 
-<details>
-<summary><strong>I want to change the layout/styling</strong></summary>
+## Commands
 
-- **Colors**: Edit the CSS variables in `src/styles/global.css`
-- **Spacing**: Also in the CSS variables - change `--space-small`, `--space-large`, etc.
-- **Typography**: Change `--font-size-base` and `--font-size-large` in variables
-- **Layout**: Look in `src/layouts/Layout.astro` for the overall page structure
-- **Page-specific styling**: Each page has its own `<style>` section at the bottom
-</details>
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview built site
 
-<details>
-<summary><strong>I want to add something new</strong></summary>
+---
 
-- **New page**: Create a new `.astro` file in `src/pages/`. The filename becomes the URL.
-- **New component**: Create a new `.astro` file in `src/components/`, then import it in pages
-- **Images**: Put them in the `public/` folder, then use `/filename.jpg` in your HTML
-- **More blog posts**: Add `.md` files to `src/pages/blog/`
-</details>
+## Things to try
 
-<details>
-<summary><strong>I broke something and don't know what</strong></summary>
+Here are some ideas for making this starter your own:
 
-1. Look at your terminal - there's probably an error message there
-2. Check your browser's developer console (F12, then look at the Console tab)
-3. Try undoing your last change
-4. Common issues:
-   - Missing closing tags (`</div>`)
-   - Typos in CSS variable names (`var(--color-textt)` instead of `var(--color-text)`)
-   - Missing quotes around attributes (`class=hero` instead of `class="hero"`)
-</details>
+**Start with the basics:**
 
-<details>
-<summary><strong>Using AI tools to help</strong></summary>
+- Change the colors in `src/styles/global.css` - pick your favorite color instead of gray
+- Edit the homepage text to be about you instead of the placeholder content
+- Try different fonts by changing `font-family` in the CSS
+- Write a real blog post about something you're interested in
 
-AI can be really helpful, but use it smartly:
+**Add your own stuff:**
 
-**Good prompts:**
-- "How do I center this div in CSS?"
-- "What's the difference between margin and padding?"
-- "Help me debug this CSS - my text isn't showing up"
+- Create a new page like `contact.astro` or `projects.astro`
+- Add it to the navigation in `MainLayout.astro`
+- Put some images in the `public/` folder and use them in your content
+- Change the footer to say something else
 
-**Include context:**
-- Share your actual code
-- Explain what you expected vs. what happened
-- Mention you're using Astro
+**Play with components:**
 
-**Red flags:**
-- If the AI suggests overly complex solutions
-- If it wants you to install lots of new packages
-- If you don't understand what it's suggesting
+- Look at how `Button.astro` works - it takes text as a prop
+- Try making your own component, maybe for a quote or an alert box
+- Use your component in multiple places to see how reusable code works
 
-**Remember**: Always try to understand the solution, don't just copy-paste. Ask follow-up questions like "why does this work?"
-</details>
+**Try different layouts:**
+
+- Compare `MainLayout.astro` and `BlogLayout.astro` to see the differences
+- Create a new page and try both layouts to see how they look
+- Make your own layout for a different type of page
+
+**If you want to get fancy:**
+
+- Add hover effects to buttons and links
+- Try a dark color scheme
+- Make the layout wider or narrower by changing `max-width`
+- Add some simple animations with CSS transitions
+
+Don't try to do everything at once. Pick one thing that sounds interesting and start there. If you break something, just undo your changes and try again.

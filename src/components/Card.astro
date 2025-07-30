@@ -1,0 +1,18 @@
+---
+// Simple component example 2: A card that takes a title and content
+// Usage: <Card title="My Title" content="Some text here" />
+const { title, content } = Astro.props;
+---
+
+<div class="card">
+  <h3>{title}</h3>
+  <p>{content}</p>
+</div>
+
+<style>
+  .card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+  }
+</style>

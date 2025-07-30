@@ -1,108 +1,25 @@
 ---
-// Import our layout template
-import Layout from "../layouts/Layout.astro";
-// Import our custom component
+// MainLayout and component
+import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 ---
 
-<Layout title="About">
-	<!-- Main content for the about page -->
-	<div class="about-content">
-		<h1>About This Project</h1>
+<MainLayout title="About">
+	<h1>About This Project</h1>
 
-		<p>
-			This is a beginner-friendly website starter designed to help new web
-			developers learn by doing. It's built with Astro, which makes
-			websites super fast!
-		</p>
+	<p>This is a beginner-friendly website starter. It's built with Astro and designed to help you learn HTML, CSS, and basic components.</p>
 
-		<div class="highlight">
-			<p>
-				<strong>Perfect for beginners!</strong> This project has lots of
-				helpful comments and simple code that's easy to understand and modify.
-			</p>
-		</div>
+	<h2>What You'll Learn</h2>
+	<p>• HTML structure and content</p>
+	<p>• CSS styling basics</p>
+	<p>• Simple Astro components</p>
+	<p>• Markdown for blog posts</p>
 
-		<p>
-			Astro is a modern tool that helps you build websites. It takes your
-			HTML, CSS, and JavaScript and turns them into a super fast website
-			that works great on any device.
-		</p>
+	<h3>Example Component</h3>
+	<p>This button uses the Button component with a custom text prop:</p>
 
-		<h2>What You'll Learn</h2>
+	<!-- Example of using a component -->
+	<Button text="I'm a Component!" />
 
-		<div class="tech-list">
-			<div class="tech-item">
-				<h3>HTML Structure</h3>
-				<p>How to organize content on web pages</p>
-			</div>
-			<div class="tech-item">
-				<h3>CSS Styling</h3>
-				<p>How to make websites look good</p>
-			</div>
-			<div class="tech-item">
-				<h3>Components</h3>
-				<p>Reusable pieces of code (like the button below)</p>
-			</div>
-		</div>
-
-		<div class="component-example">
-			<h3>Example Component</h3>
-			<p>This button is made using a reusable component:</p>
-			<!-- Here we use our Button component -->
-			<Button text="I'm a Component!" />
-			<p>
-				<small
-					>Check out <code>src/components/Button.astro</code> to see how
-					it works!</small>
-			</p>
-		</div>
-
-		<p>
-			Ready to start learning? Look at the files in the <code>src/</code> folder
-			and try changing things to see what happens!
-		</p>
-	</div>
+	<p><small>Check out <code>src/components/Button.astro</code> to see how it works!</small></p>
 </Layout>
-<style>
-	/* Simple styles for the about page using CSS variables */
-	.about-content {
-		padding: var(--space-large) 0;
-	}
-
-	.about-content h1 {
-		font-size: var(--font-size-xlarge);
-		margin-bottom: var(--space-large);
-	}
-
-	.about-content p {
-		margin-bottom: var(--space-large);
-	}
-
-	.highlight {
-		background: var(--color-background-alt);
-		padding: var(--space-large);
-		border-left: 3px solid var(--color-accent);
-		margin: var(--space-large) 0;
-	}
-
-	.tech-list {
-		margin: var(--space-large) 0;
-	}
-
-	.tech-item {
-		border-bottom: 1px solid var(--color-border);
-		padding: var(--space-medium) 0;
-	}
-
-	.tech-item:last-child {
-		border-bottom: none;
-	}
-
-	.component-example {
-		margin: var(--space-large) 0;
-		padding: var(--space-large);
-		background: var(--color-background-alt);
-		border: 1px solid var(--color-border);
-	}
-</style>

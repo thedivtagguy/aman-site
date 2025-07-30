@@ -1,5 +1,6 @@
 ---
-layout: ../../layouts/Layout.astro
+# Blog posts use BlogLayout instead of MainLayout - notice the difference!
+layout: ../../layouts/BlogLayout.astro
 title: "My First Blog Post"
 date: "2024-01-15"
 excerpt: "Welcome to my blog! This is my first post written in Markdown. Learn about the basics of Markdown and how to use it in Astro."
@@ -7,7 +8,7 @@ excerpt: "Welcome to my blog! This is my first post written in Markdown. Learn a
 
 # My First Blog Post
 
-Welcome to my blog! This is my first post written in **Markdown**. 
+Welcome to my blog! This is my first post written in **Markdown**.
 
 ## What is Markdown?
 
@@ -18,7 +19,7 @@ Markdown is a lightweight markup language that allows you to format text using s
 Here are some basic Markdown formatting examples:
 
 - **Bold text** using `**text**`
-- *Italic text* using `*text*`
+- _Italic text_ using `*text*`
 - `Code snippets` using backticks
 - [Links](https://astro.build) using `[text](url)`
 
@@ -28,7 +29,7 @@ You can also include code blocks:
 
 ```javascript
 function greet(name) {
-    return `Hello, ${name}!`;
+  return `Hello, ${name}!`;
 }
 
 console.log(greet("World"));
@@ -37,11 +38,13 @@ console.log(greet("World"));
 ### Lists
 
 Ordered lists:
+
 1. First item
 2. Second item
 3. Third item
 
 Unordered lists:
+
 - Item one
 - Item two
 - Item three

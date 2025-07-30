@@ -1,0 +1,37 @@
+---
+// This component creates the basic structure for every page
+// It takes a "title" prop to set the page title
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="My website description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body>
+		<!-- Navigation appears on every page -->
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/blog">Blog</a></li>
+			</ul>
+		</nav>
+
+		<!-- This is where each page's content goes -->
+		<main>
+			<slot />
+		</main>
+
+		<!-- Footer appears on every page -->
+		<footer>
+			<p>&copy; 2025 My Website</p>
+		</footer>
+	</body>
+</html>
