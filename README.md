@@ -25,8 +25,8 @@ This starter is intentionally simple.
 3. **Install dependencies** and start the dev server:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 4. **Open your browser** to `http://localhost:4321`
@@ -108,7 +108,7 @@ Here are some ideas for making this starter your own:
 - Change the colors in `src/styles/global.css` - pick your favorite color instead of gray
 - Edit the homepage text to be about you instead of the placeholder content
 - Try different fonts by changing `font-family` in the CSS
-- Write a real blog post about something you're interested in
+- Write a blog post about something you're interested in
 
 **Add your own stuff:**
 
@@ -128,12 +128,3 @@ Here are some ideas for making this starter your own:
 - Compare `MainLayout.astro` and `BlogLayout.astro` to see the differences
 - Create a new page and try both layouts to see how they look
 - Make your own layout for a different type of page
-
-**If you want to get fancy:**
-
-- Add hover effects to buttons and links
-- Try a dark color scheme
-- Make the layout wider or narrower by changing `max-width`
-- Add some simple animations with CSS transitions
-
-Don't try to do everything at once. Pick one thing that sounds interesting and start there. If you break something, just undo your changes and try again.
