@@ -3,19 +3,36 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
+
+import ImageCard from "../components/ImageCard.astro"
+
+const name = "Aman";
 ---
 
 <MainLayout title="Welcome to My Website">
-	<h1>My First Website</h1>
+	<h1>And Now For Something Completely Different</h1>
 	<p>A simple website built with Astro</p>
 
 	<!-- Example of using a component with props -->
-	<Button text="Learn More" />
+	<Button text="Welcome Home, Son" />
 
 	<h2>Features</h2>
+
+	<ImageCard link="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" caption="Aman's nice photograph" height="200"/>
+
+	<ImageCard link="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" caption="Aman's nice photograph" height="200"/>
+
+		<ImageCard link="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" caption="Aman's nice photograph" height="200"/>
+
+			<ImageCard link="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" caption="Aman's nice photograph" height="200"/>
 
 	<!-- Example of using another component with props -->
 	<Card title="Simple Design" content="Clean and minimal design that's easy to understand." />
 	<Card title="Easy to Edit" content="Change text, colors, and layout with simple code." />
 	<Card title="Learn by Doing" content="Every file has helpful comments to guide you." />
+
+	<Button text="This is the end" />
+
+		<ImageCard link="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" caption="Aman's nice photograph" height="200"/>
+
 </Layout>
